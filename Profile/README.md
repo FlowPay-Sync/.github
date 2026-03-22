@@ -13,7 +13,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38BDF8?style=flat-square&logo=tailwindcss)](https://tailwindcss.com)
 [![Claude AI](https://img.shields.io/badge/Claude-AI-d97706?style=flat-square)](https://anthropic.com)
 [![Clover](https://img.shields.io/badge/Clover-Fiserv-22c55e?style=flat-square)](https://clover.com)
-[![Avalanche](https://img.shields.io/badge/Avalanche-C--Chain-e84142?style=flat-square&logo=avalanche)](https://avax.network)
+[![Fiserv](https://img.shields.io/badge/Fiserv-Loyalty-00a651?style=flat-square)](https://fiserv.com)
 
 ---
 
@@ -69,8 +69,8 @@ Customer on WhatsApp
 │           FLOWPAY SYNC 2.0                │
 │                                           │
 │  ┌─────────┐   ┌──────────┐   ┌────────┐ │
-│  │ Claude  │──▶│ Clover   │──▶│  NFT   │ │
-│  │   AI    │   │  Fiserv  │   │Avalanc.│ │
+│  │ Claude  │──▶│ Clover   │──▶│Loyalty │ │
+│  │   AI    │   │  Fiserv  │   │ Fiserv │ │
 │  └─────────┘   └──────────┘   └────────┘ │
 │   Parses order  Creates POS order Loyalty │
 └───────────────────────────────────────────┘
@@ -123,17 +123,17 @@ Customer pays link  ──▶  Fiserv Webhook  ──▶  Dashboard PAID ✓
 
 ---
 
-### Feature 3 — Web3 Loyalty Drops (Avalanche)
+### Feature 3 — Fiserv Loyalty Rewards
 
-> Connecting digital sales with physical foot traffic. Three worlds in one.
+> Connecting digital sales with physical foot traffic. Two worlds in one.
 
 After a successful payment:
 
-- FlowPay mints a discount NFT on **Avalanche C-Chain**
-- The customer sees on screen: *"Thanks for your purchase! You just earned a loyalty collectible — show it on your next visit for a free coffee"*
+- FlowPay registers a discount reward via **Fiserv Loyalty**
+- The customer sees on screen: *"Thanks for your purchase! You just earned a loyalty reward — show it on your next visit for a free coffee"*
 - Drives foot traffic back to the physical Clover POS
 
-**Why it's brilliant:** Connects WhatsApp (digital) → Avalanche (blockchain) → Clover (physical).
+**Why it's brilliant:** Connects WhatsApp (digital) → Fiserv Loyalty (rewards) → Clover (physical).
 
 ---
 
@@ -156,9 +156,9 @@ After a successful payment:
                     ┌────────────────────┼────────────────────┐
                     ▼                    ▼                     ▼
              ┌──────────┐        ┌─────────────┐      ┌───────────────┐
-             │  Clover  │        │  lib/store  │      │   Avalanche   │
-             │  Fiserv  │        │ (in-memory) │      │   C-Chain     │
-             │ Sandbox  │        │             │      │   (Fuji)      │
+             │  Clover  │        │  lib/store  │      │    Fiserv     │
+             │  Fiserv  │        │ (in-memory) │      │   Loyalty     │
+             │ Sandbox  │        │             │      │   Rewards     │
              └──────────┘        └─────────────┘      └───────────────┘
 ```
 
@@ -187,12 +187,11 @@ After a successful payment:
 | **Fiserv Webhooks** | Payment confirmation |
 | **Twilio** | WhatsApp gateway |
 
-### Web3 (Optional)
+### Fiserv Loyalty
 | Technology | Purpose |
 |---|---|
-| **Avalanche C-Chain** | Layer 1 blockchain network |
-| **Solidity** | ERC-721 smart contract |
-| **ethers.js** | Node.js blockchain interaction |
+| **Fiserv Loyalty API** | Rewards and loyalty program |
+| **Clover REST API v3** | POS loyalty order integration |
 
 ---
 
@@ -561,7 +560,7 @@ ngrok http 3000
 | **4** | Customer's WhatsApp replies on its own with the payment link | 🤖 AI Bot |
 | **5** | Simulate payment on the phone (Fiserv test card) | — |
 | **6** | Dashboard switches from Pending → **Paid** without page reload | ⚡ Webhook |
-| **7** | Show loyalty NFT minted on Avalanche on the customer's screen | 🔗 Web3 |
+| **7** | Show loyalty reward registered on Fiserv on the customer's screen | 🎁 Loyalty |
 
 ---
 
@@ -576,7 +575,7 @@ ngrok http 3000
 - [x] Zero-Click WhatsApp Bot with Claude AI
 
 ### v2.0 — Post-Hackathon
-- [ ] NFT Loyalty on Avalanche C-Chain (Web3 Drops)
+- [ ] Fiserv Loyalty Rewards (advanced tier program)
 - [ ] OAuth 2.0 for multi-merchant onboarding
 - [ ] Audio support (WhatsApp Voice → AI transcription)
 - [ ] Analytics panel with persistent history (database)

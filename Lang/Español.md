@@ -13,7 +13,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38BDF8?style=flat-square&logo=tailwindcss)](https://tailwindcss.com)
 [![Claude AI](https://img.shields.io/badge/Claude-AI-d97706?style=flat-square)](https://anthropic.com)
 [![Clover](https://img.shields.io/badge/Clover-Fiserv-22c55e?style=flat-square)](https://clover.com)
-[![Avalanche](https://img.shields.io/badge/Avalanche-C--Chain-e84142?style=flat-square&logo=avalanche)](https://avax.network)
+[![Fiserv](https://img.shields.io/badge/Fiserv-Loyalty-00a651?style=flat-square)](https://fiserv.com)
 
 ---
 
@@ -69,8 +69,8 @@ Cliente en WhatsApp
 │           FLOWPAY SYNC 2.0                │
 │                                           │
 │  ┌─────────┐   ┌──────────┐   ┌────────┐ │
-│  │ Claude  │──▶│ Clover   │──▶│ NFT    │ │
-│  │   AI    │   │  Fiserv  │   │Avalanc.│ │
+│  │ Claude  │──▶│ Clover   │──▶│Loyalty │ │
+│  │   AI    │   │  Fiserv  │   │ Fiserv │ │
 │  └─────────┘   └──────────┘   └────────┘ │
 │   Parsea orden  Crea orden POS  Loyalty   │
 └───────────────────────────────────────────┘
@@ -123,17 +123,17 @@ Cliente paga el link  ──▶  Webhook Fiserv  ──▶  Dashboard PAID ✓
 
 ---
 
-### Feature 3 — Web3 Loyalty Drops (Avalanche)
+### Feature 3 — Fiserv Loyalty Rewards
 
-> Conecta ventas digitales con tráfico físico. Tres mundos en uno.
+> Conecta ventas digitales con tráfico físico. Dos mundos en uno.
 
 Al completar el pago exitosamente:
 
-- FlowPay mintea un NFT de descuento en **Avalanche C-Chain**
-- El cliente ve en pantalla: *"Ganaste un coleccionable de lealtad — muéstralo en tu próxima visita para un café gratis"*
+- FlowPay registra un descuento de lealtad vía **Fiserv Loyalty**
+- El cliente ve en pantalla: *"Ganaste un reward de lealtad — muéstralo en tu próxima visita para un café gratis"*
 - Genera tráfico peatonal de vuelta al POS Clover físico
 
-**Por qué es brillante:** Une WhatsApp (digital) → Avalanche (blockchain) → Clover (físico).
+**Por qué es brillante:** Une WhatsApp (digital) → Fiserv Loyalty (rewards) → Clover (físico).
 
 ---
 
@@ -156,9 +156,9 @@ Al completar el pago exitosamente:
                     ┌────────────────────┼────────────────────┐
                     ▼                    ▼                     ▼
              ┌──────────┐        ┌─────────────┐      ┌───────────────┐
-             │  Clover  │        │  lib/store  │      │   Avalanche   │
-             │  Fiserv  │        │ (in-memory) │      │   C-Chain     │
-             │ Sandbox  │        │             │      │   (Fuji)      │
+             │  Clover  │        │  lib/store  │      │    Fiserv     │
+             │  Fiserv  │        │ (in-memory) │      │   Loyalty     │
+             │ Sandbox  │        │             │      │   Rewards     │
              └──────────┘        └─────────────┘      └───────────────┘
 ```
 
@@ -187,12 +187,11 @@ Al completar el pago exitosamente:
 | **Fiserv Webhooks** | Confirmación de pagos |
 | **Twilio** | Gateway de WhatsApp |
 
-### Web3 (Opcional)
+### Fiserv Loyalty
 | Tecnología | Uso |
 |---|---|
-| **Avalanche C-Chain** | Red blockchain Layer 1 |
-| **Solidity** | Smart contract ERC-721 |
-| **ethers.js** | Interacción desde Node.js |
+| **Fiserv Loyalty API** | Programa de rewards y lealtad |
+| **Clover REST API v3** | Integración de loyalty en POS |
 
 ---
 
@@ -561,7 +560,7 @@ ngrok http 3000
 | **4** | WhatsApp del cliente responde solo con el link de pago | 🤖 AI Bot |
 | **5** | Simular pago en el celular (tarjeta de prueba Fiserv) | — |
 | **6** | Dashboard cambia de Pendiente → **Pagado** sin recargar | ⚡ Webhook |
-| **7** | Mostrar NFT de lealtad minteado en Avalanche en pantalla del cliente | 🔗 Web3 |
+| **7** | Mostrar reward de lealtad registrado en Fiserv en pantalla del cliente | 🎁 Loyalty |
 
 ---
 
@@ -576,7 +575,7 @@ ngrok http 3000
 - [x] Bot WhatsApp Zero-Click con Claude AI
 
 ### v2.0 — Post-Hackathon
-- [ ] NFT Loyalty en Avalanche C-Chain (Web3 Drops)
+- [ ] Fiserv Loyalty Rewards (programa de niveles avanzado)
 - [ ] OAuth 2.0 para onboarding multi-merchant
 - [ ] Soporte de audio (WhatsApp Voice → IA transcripción)
 - [ ] Panel de analytics con histórico persistente (base de datos)
